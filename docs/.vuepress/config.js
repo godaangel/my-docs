@@ -19,7 +19,7 @@ module.exports = {
             //         { text: 'Web', link: '/web/' }
             //     ]
             // },
-            { text: '关于', link: '/about/' },
+            // { text: '关于', link: '/about/' },
             { text: 'Github', link: 'https://www.github.com/godaangel' },
         ],
         sidebar: {
