@@ -1,2 +1,2 @@
 # Hello VuePress!
-haa1
+欢迎
