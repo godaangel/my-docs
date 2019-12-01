@@ -146,7 +146,7 @@ createElement(
 }
 ```
 
-## 【起步】最基本的实例
+## 起步: 最基本的实例
 
 这是一个基础的Demo，包含了
 
@@ -244,7 +244,7 @@ export default {
 </script>
 ```
 
-## 【进阶】包含属性配置较完整的实例
+## 进阶: 包含属性配置较完整的实例
 
 这个Demo主要展示了createElement属性用法，包含
 
@@ -434,7 +434,7 @@ on: {
 }
 ```
 
-## 【进阶】CreateElement中`slot`属性的用法
+## 进阶: CreateElement中`slot`属性的用法
 
 这个Demo主要展示render中createElement的配置slot属性用法。
 
@@ -549,7 +549,7 @@ export default {
 </script>
 ```
 
-## 【深入】CreateElement中`scopedSlots`的用法
+## 深入: CreateElement中`scopedSlots`的用法
 
 这个Demo主要展示scopedSlots的用法，包括定义和使用。scopedSlots的template用法和解释参考[vue-slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#解构-slot-scope)。
 
@@ -635,7 +635,7 @@ export default {
 </script>
 ```
 
-## 【换口气儿】Render中的JSX配置和用法
+## 换口气儿: Render中的JSX配置和用法
 
 写了这么多createElement，眼睛都花了，有的写起来也挺麻烦的。我们试试来换个口味，试试JSX的写法。
 
@@ -750,7 +750,7 @@ export default {
 
 JSX的主要转换还是依靠我们之前安装的[babel插件](https://github.com/vuejs/babel-plugin-transform-vue-jsx)，而JSX的事件以及属性的用法见babel插件的[使用说明](https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage)，这里面包含了vue里面事件和属性对应的用法说明。
 
-## 【深入】函数式组件
+## 深入: 函数式组件
 
 下面来进行最后一个模块的介绍，函数式组件functional，这个东西的用法就见仁见智了，这里也没啥好的方案，只是给出了一些示例，各位大佬如果有一些具体的使用到的地方，阔以指点一下哇~thx~\(~~害羞.jpg~~\)。
 
