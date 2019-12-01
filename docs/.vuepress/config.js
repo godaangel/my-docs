@@ -1,6 +1,6 @@
 module.exports = {
-    title: '个人主页',
-    description: 'Godaangel的个人主页',
+    title: 'Godaangel的博客',
+    description: '记录开发中的问题和学习记录',
     serviceWorker: true, //支持pwa
     head: [
         ['link', { rel: 'icon', href: '/img/logo.ico' }],
@@ -26,13 +26,57 @@ module.exports = {
             '/fe/': [{
                 title: 'Vue',
                 collapsable: true,
-                sidebarDepth: 2,
+                sidebarDepth: 1,
                 children: [
-                    'vue-render'
+                    'vue/vue-render',
+                    'vue/vue-image-lazy-load',
+                    'vue/vue-components-event',
+                    'vue/vue-self-model',
+                    'vue/vue-for-key'
+                ]
+            }, {
+                title: '小程序',
+                collapsable: true,
+                sidebarDepth: 1,
+                children: [
+                    'mini/mini-video-auto-play',
+                    'mini/mini-long-flow'
+                ]
+            }, {
+                title: 'JS',
+                collapsable: true,
+                sidebarDepth: 1,
+                children: [
+                    'js/extends-prop',
+                    'js/decorator',
+                ]
+            }, {
+                title: 'CSS',
+                collapsable: true,
+                sidebarDepth: 1,
+                children: [
+                    'css/hide-scroll-style',
+                ]
+            }, {
+                title: 'Webpack',
+                collapsable: true,
+                sidebarDepth: 1,
+                children: [
+                    'webpack/less-path'
+                ]
+            }],
+            '/nodejs/': [{
+                title: 'Node',
+                collapsable: true,
+                sidebarDepth: 1,
+                children: [
+                    'express-install',
+                    'express-install-qa',
+                    'express-html'
                 ]
             }],
         },
-        sidebarDepth: 2,
-        lastUpdated: 'Last Updated',
+        sidebarDepth: 1,
+        lastUpdated: '最后更新',
     }
 }

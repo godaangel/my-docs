@@ -6,7 +6,7 @@ _Vue 推荐在绝大多数情况下使用 template 来创建你的 HTML。然而
 
 当然，官网已经给出了一个使用template来编写的不方便的demo，所以在这里就不反复提起了，初次使用或者有兴趣的大佬可以直接戳这个链接了解一下~[Vue Render](https://cn.vuejs.org/v2/guide/render-function.html#基础 "Vue Render")
 
-### 本篇文章主要介绍了以下几点
+## 本篇文章主要介绍了以下几点
 
 > 了解基本概念的客官可以直接下拉到实例，实例已上传github
 
@@ -21,25 +21,25 @@ _Vue 推荐在绝大多数情况下使用 template 来创建你的 HTML。然而
 
 ### [Github传送门](https://github.com/godaangel/vue-render-test.git)
 
-### 虚拟DOM
+## 虚拟DOM
 
-##### 1、**什么是DOM？**
+#### 1、**什么是DOM？**
 
 DOM 就是浏览器解析 HTML 得来的一个树形逻辑对象。
 
-##### 2、**什么是虚拟DOM？**
+#### 2、**什么是虚拟DOM？**
 
 用 Object 来代表一个节点，这个节点叫做虚拟节点（ Virtual Node ）简写为 VNode，由 VNode 树组成虚拟DOM。
 
-##### 3、**为什么要用虚拟DOM？**
+#### 3、**为什么要用虚拟DOM？**
 
 Web 页面的大多数操作和逻辑的本质就是不停地修改 DOM 元素，但是 DOM 操作太慢了，过于频繁的 DOM 操作可能会导致整个页面掉帧、卡顿甚至失去响应。仔细想一想，很多 DOM 操作是可以打包（多个操作压成一个）和合并（一个连续更新操作只保留最终结果）的，同时 JS 引擎的计算速度要快得多，所以为什么不把 DOM 操作先通过JS计算完成后统一来一次大招操作DOM呢，于是就有了虚拟DOM的概念。当然，虚拟DOM操作的核心是Diff算法，也就是比较变化前后Vnode的不同，计算出最小的DOM操作来改变DOM，提高性能。
 
-##### 4、**Vue里面的虚拟DOM怎么生成的呢？**
+#### 4、**Vue里面的虚拟DOM怎么生成的呢？**
 
 通过\`createElement\(tag, options, VNodes\)\`，下面就来介绍这个函数的基本概念。
 
-### CreateElement 函数
+## CreateElement 函数
 
 > 简单来说CreateElement就是用来生成Vnode的函数
 
@@ -47,7 +47,7 @@ CreateElement 到底会返回什么呢？其实不是一个实际的 DOM 元素�
 
 **【Tips】**`CreateElement`**函数在惯例中通常也写作**`h`
 
-##### 1、**CreateElement的参数如下所示**：（~~太懒了直接搬的官网~~）
+#### 1、**CreateElement的参数如下所示**：（~~太懒了直接搬的官网~~）
 
 ```js
 // @returns {VNode}
@@ -79,7 +79,7 @@ createElement(
 
 【**Tips】: **文档中此处说VNodes子节点必须是唯一的，也就是说第三个参数的Array里不能出现相同指向的VNodes，实际验证以后，就算写重复的VNodes，也并不会报错，估计此处会有些坑，现在还没踩到，建议按照文档要求，保持子节点唯一。
 
-##### 2、Vnode属性配置（第二个参数）：\(~~太懒了也是直接搬，捂脸.jpg~~\)
+#### 2、Vnode属性配置（第二个参数）：\(~~太懒了也是直接搬，捂脸.jpg~~\)
 
 以下属性为简单介绍，具体用法和一些 _备注解释 _可以参考后面会讲到的【包含属性配置较完整的实例】
 
@@ -146,7 +146,7 @@ createElement(
 }
 ```
 
-### 【起步】最基本的实例
+## 【起步】最基本的实例
 
 这是一个基础的Demo，包含了
 
@@ -244,7 +244,7 @@ export default {
 </script>
 ```
 
-### 【进阶】包含属性配置较完整的实例
+## 【进阶】包含属性配置较完整的实例
 
 这个Demo主要展示了createElement属性用法，包含
 
@@ -380,7 +380,7 @@ export default {
 </script>
 ```
 
-#### 事件 & 按键修饰符
+### 事件 & 按键修饰符
 
 上面例子中用到了`e.stopPropagation`这个方法，等价于 template 模板写法的`click.stop`，其他的事件和按键修饰符也有对应的方法，对应情况如下。
 
@@ -434,7 +434,7 @@ on: {
 }
 ```
 
-### 【进阶】CreateElement中`slot`属性的用法
+## 【进阶】CreateElement中`slot`属性的用法
 
 这个Demo主要展示render中createElement的配置slot属性用法。
 
@@ -549,7 +549,7 @@ export default {
 </script>
 ```
 
-### 【深入】CreateElement中`scopedSlots`的用法
+## 【深入】CreateElement中`scopedSlots`的用法
 
 这个Demo主要展示scopedSlots的用法，包括定义和使用。scopedSlots的template用法和解释参考[vue-slot-scope](https://cn.vuejs.org/v2/guide/components-slots.html#解构-slot-scope)。
 
@@ -635,7 +635,7 @@ export default {
 </script>
 ```
 
-### 【换口气儿】Render中的JSX配置和用法
+## 【换口气儿】Render中的JSX配置和用法
 
 写了这么多createElement，眼睛都花了，有的写起来也挺麻烦的。我们试试来换个口味，试试JSX的写法。
 
@@ -750,7 +750,7 @@ export default {
 
 JSX的主要转换还是依靠我们之前安装的[babel插件](https://github.com/vuejs/babel-plugin-transform-vue-jsx)，而JSX的事件以及属性的用法见babel插件的[使用说明](https://github.com/vuejs/babel-plugin-transform-vue-jsx#usage)，这里面包含了vue里面事件和属性对应的用法说明。
 
-### 【深入】函数式组件
+## 【深入】函数式组件
 
 下面来进行最后一个模块的介绍，函数式组件functional，这个东西的用法就见仁见智了，这里也没啥好的方案，只是给出了一些示例，各位大佬如果有一些具体的使用到的地方，阔以指点一下哇~thx~\(~~害羞.jpg~~\)。
 
@@ -789,7 +789,7 @@ Functional相当于一个纯函数一样，内部不存储用于在界面上展�
 
 接下来就通过两个组件来看看如何使用的吧，这里也仅仅只是示例而已，使用的场景仍在探索中，具体的使用场景还需要在开发过程中根据需求复杂的和性能要求来酌情选择~
 
-#### 函数式组件一 `wii-functional`用在动画的functional
+### 函数式组件一 `wii-functional`用在动画的functional
 
 这个Demo的作用是在输入框中输入字符，对数据列表进行筛选，筛选时加入显示和消失的动画。
 
@@ -912,7 +912,7 @@ export default {
 </script>
 ```
 
-#### 函数式组件二 `wii-choose-comp`用在组件切换的functional
+### 函数式组件二 `wii-choose-comp`用在组件切换的functional
 
 在这个示例中，通过props来切换加载不同的组件，并且在props传递给子组件之前操作它，组件内部定义了click.native事件来展示示例。如果对一批组件进行同样的操作，则可以用这个functional，类似于加工厂。
 
@@ -1066,7 +1066,7 @@ Functional相当于一个纯函数一样，内部不存储用于在界面上展�
 
 接下来就通过两个组件来看看如何使用的吧，这里也仅仅只是示例而已，使用的场景仍在探索中，具体的使用场景还需要在开发过程中根据需求复杂的和性能要求来酌情选择~
 
-#### 函数式组件一 `wii-functional`用在动画的functional
+### 函数式组件一 `wii-functional`用在动画的functional
 
 这个Demo的作用是在输入框中输入字符，对数据列表进行筛选，筛选时加入显示和消失的动画。
 
@@ -1189,7 +1189,7 @@ export default {
 </script>
 ```
 
-#### 函数式组件二 `wii-choose-comp`用在组件切换的functional
+### 函数式组件二 `wii-choose-comp`用在组件切换的functional
 
 在这个示例中，通过props来切换加载不同的组件，并且在props传递给子组件之前操作它，组件内部定义了click.native事件来展示示例。如果对一批组件进行同样的操作，则可以用这个functional，类似于加工厂。
 
@@ -1307,7 +1307,7 @@ export default {
 
 
 
-### 总结
+## 总结
 
 以上就是最近对Vue Render的一个探索，因为对于公共组件库开发来说，需要考虑的问题有很多，所以灵活性要求也更高，如果用Vue Render这种更接近编译的方式来编写组件库，可能会让逻辑更清晰，虽然不停的创建元素的写法是挺恶心的哈哈哈哈~~
 
